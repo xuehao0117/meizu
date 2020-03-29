@@ -1,6 +1,6 @@
 # meizu
 <<<<<<< HEAD
-一个基于VUE的SPA
+一个模仿魅族商城，基于VUE的SPA
 =======
 
 ## Project setup
