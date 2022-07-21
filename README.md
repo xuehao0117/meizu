@@ -1,7 +1,5 @@
 # meizu
-<<<<<<< HEAD
-一个模仿魅族商城，基于VUE的SPA
-=======
+## 一个模仿魅族商城的单页应用
 
 ## Project setup
 ```
@@ -30,4 +28,3 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
->>>>>>> 代码上传

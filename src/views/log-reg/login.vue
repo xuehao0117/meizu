@@ -19,7 +19,7 @@
       </p>
       <p class="last">
         <span @click="toReg">注册</span>
-        <span @click="revisePwd=!revisePwd">修改密码</span>
+        <span @click="revisePwd = !revisePwd">修改密码</span>
       </p>
     </div>
 
@@ -44,16 +44,16 @@ import axios from "axios";
 import Check from "../../components/checkResult";
 export default {
   name: "Login",
-  data: function() {
+  data: function () {
     return {
       revisePwd: false,
       alertText: "",
       isAlertShow: false,
-      fromPath:''
+      fromPath: "",
     };
   },
   components: {
-    Check
+    Check,
   },
   methods: {
     closeThis() {
@@ -96,7 +96,7 @@ export default {
       let url = "MeiZu/updatePass";
       axios
         .post(url, `tel=${tel}&newPass=${newPass}&oldPass=${oldPass}`)
-        .then(result => {
+        .then((result) => {
           if (result.data.code === 1) {
             this.isAlertShow = true;
             this.alertText = "修改成功";
@@ -123,17 +123,17 @@ export default {
         return;
       }
       let url = "login";
-      axios.post(url, `user=${user}&pass=${pass}`).then(result => {
+      axios.post(url, `user=${user}&pass=${pass}`).then((result) => {
         if (result.data.code === 1) {
           localStorage.setItem("userID", result.data.userID);
           localStorage.setItem("nickname", result.data.name);
           localStorage.setItem("token", result.data.token);
           this.isAlertShow = true;
           this.alertText = "登录成功！";
-          if(this.fromPath==='/registe'){
-            this.$router.push('/');
-          }else{
-              this.$router.go(-1);
+          if (this.fromPath === "/registe") {
+            this.$router.push("/");
+          } else {
+            this.$router.go(-1);
           }
         }
         if (result.data.code === 2) {
@@ -143,11 +143,11 @@ export default {
       });
     },
   },
-  beforeRouteEnter(to, from, next){
-   next(vm=>{
-     vm.fromPath=from.path
-   })  
-  }
+  beforeRouteEnter(to, from, next) {
+    next((vm) => {
+      vm.fromPath = from.path;
+    });
+  },
 };
 </script>
 <style scoped>
@@ -171,7 +171,7 @@ p > button {
   width: 290px;
   height: 35px;
   border-radius: 15px;
-  background-color: #147DF0;
+  background-color: #147df0;
   color: #fff;
   border: none;
   margin: 0 auto;
@@ -180,7 +180,7 @@ p > button {
 .last {
   display: flex;
   justify-content: space-between;
-  color:  #147DF0;
+  color: #147df0;
 }
 p > img {
   width: 100px;
